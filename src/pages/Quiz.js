@@ -43,33 +43,55 @@ class Quiz extends Component {
 
         return (
             <div className="container-md p-2 col-6">
-                <h2 className="title is-2 has-text-centered-desktop">Test cerebro</h2>
                 <div className="row row-cols-1 box">
-                <Question 
-                    title="Tiendo a estar más frecuentemente:" 
-                    numberQuestion="one"
-                    optionLeft=" Tenso y preocupado"
-                    optionRight=" Relajado y despreocupado"
-                    changeLeft={this.Left}
-                    changeRight={this.Right}
-                ></Question>
-                <Question 
-                    title="Pregunta numero 2:" 
-                    numberQuestion="two"
-                    optionLeft=" Tenso y preocupado"
-                    optionRight=" Relajado y despreocupado"
-                    changeLeft={this.Left}
-                    changeRight={this.Right}
-                ></Question> 
-                <Question 
-                    title="Pregunta numero 3:" 
-                    numberQuestion="three"
-                    optionLeft=" Tenso y preocupado"
-                    optionRight=" Relajado y despreocupado"
-                    changeLeft={this.Left}
-                    changeRight={this.Right}
-                ></Question> 
-            </div>
+                    <h2 className="title is-2 has-text-centered">Test cerebro</h2>
+                    <Question 
+                        title="¿Tiendo a estar más frecuentemente?" 
+                        numberQuestion="one"
+                        optionLeft=" Tenso y preocupado"
+                        optionRight=" Relajado y despreocupado"
+                        changeLeft={this.Left}
+                        changeRight={this.Right}
+                    ></Question>
+                    <Question 
+                        title="¿Qué es lo que ves a primera vista?" 
+                        src={require('../img/faces-cup.png')}
+                        alt="faces-cup"
+                        autor="Frank Hensler"
+                        numberQuestion="two"
+                        optionLeft=" Copas"
+                        optionRight=" Caras"
+                        changeLeft={this.Left}
+                        changeRight={this.Right}
+                    ></Question> 
+                    <Question 
+                        title="¿Cómo tomas tus decisiones?" 
+                        numberQuestion="three"
+                        optionLeft=" Más racionalmente"
+                        optionRight=" Más emocionalmente"
+                        changeLeft={this.Left}
+                        changeRight={this.Right}
+                    ></Question>
+                    <Question 
+                        title="¿En qué dirección está dirigiendose la bailarina?" 
+                        src={require('../img/dancer.gif')}
+                        alt="dancer"
+                        autor="Nobuyuki Kayahara"
+                        numberQuestion="four"
+                        optionLeft=" Derecha"
+                        optionRight=" Izquierda"
+                        changeLeft={this.Left}
+                        changeRight={this.Right}
+                    ></Question>
+                    <Question 
+                        title="¿Concibes la información mejor acústicamente o visualmente?" 
+                        numberQuestion="five"
+                        optionLeft=" Mejor acústicamente"
+                        optionRight=" Mejor visualmente"
+                        changeLeft={this.Left}
+                        changeRight={this.Right}
+                    ></Question>
+                </div>
                 <div class="row row-cols-1">
                     <input className="button is-link" type="submit" value="Enviar"></input>
                 </div>
