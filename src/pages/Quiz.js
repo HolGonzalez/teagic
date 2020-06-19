@@ -65,7 +65,7 @@ class Quiz extends Component {
         //console.log("Left: " + this.state.left, "Right: " + this.state.right, "Question: " + this.state.question)
         if(this.state.question === 5){
             return(
-                <div className="container-md p-2 col-6 has-text-centered align-middle">
+                <div className="container-md p-2 col-10 col-lg-6 has-text-centered align-middle">
                     <div className="row row-cols-1 box">
                         <h2 className="title is-2">Resultados</h2>
                         <p className="mb-2"><strong>{this.state.results}</strong></p>
@@ -78,7 +78,7 @@ class Quiz extends Component {
             )
         } else{
         return (
-            <div className="container-md p-2 col-6">
+            <div className="container-md p-2 col-10 col-lg-6">
                 <div className="row row-cols-1 box">
                     <h2 className="title is-2 has-text-centered">Test cerebro</h2>
                     <Question 
