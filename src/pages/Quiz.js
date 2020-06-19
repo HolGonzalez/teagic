@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bulma/css/bulma.css'
 import Question from '../components/Question'
+
 
 class Quiz extends Component {
 
@@ -10,7 +12,10 @@ class Quiz extends Component {
 
         this.state = {
             left : 0,
-            right : 0
+            right : 0,
+            question : 0,
+            results : "",
+            direction :""
         }
 
         this.Left = this.Left.bind(this)
@@ -20,15 +25,19 @@ class Quiz extends Component {
     Left(e){
         this.ValidateOption(e)
         this.setState({
-            left: this.state.left + parseInt(e.target.value)
+            left: this.state.left + parseInt(e.target.value),
+            question : this.state.question + 1
         })
+        this.BrainResults()
     }
 
     Right(e){
         this.ValidateOption(e)
         this.setState({
-            right: this.state.right + parseInt(e.target.value)
+            right: this.state.right + parseInt(e.target.value),
+            question : this.state.question + 1
         })
+        this.BrainResults()
     }
 
     ValidateOption(e){
@@ -38,9 +47,36 @@ class Quiz extends Component {
         }
     }
 
-    render() {
-        console.log(this.state.left, this.state.right)
+    BrainResults(){
+        if(this.state.left > this.state.right){
+            this.setState({
+                results: "Tu hemisferio izquiero es el dominante.",
+                direction: "/left"
+            })
+        }else{
+            this.setState({
+                results: "Tu hemisferio derecho es el dominante.",
+                direction: "/right"
+            })
+        }
+    }
 
+    render() {
+        //console.log("Left: " + this.state.left, "Right: " + this.state.right, "Question: " + this.state.question)
+        if(this.state.question === 5){
+            return(
+                <div className="container-md p-2 col-6 has-text-centered align-middle">
+                    <div className="row row-cols-1 box">
+                        <h2 className="title is-2">Resultados</h2>
+                        <p className="mb-2"><strong>{this.state.results}</strong></p>
+                        <div className="row row-cols-1 mx-auto">
+                            <Link className="btn button is-link" to={this.state.direction}>Comenzar a estudiar</Link>
+                        </div>
+                    </div>
+                </div>
+
+            )
+        } else{
         return (
             <div className="container-md p-2 col-6">
                 <div className="row row-cols-1 box">
@@ -92,11 +128,8 @@ class Quiz extends Component {
                         changeRight={this.Right}
                     ></Question>
                 </div>
-                <div class="row row-cols-1">
-                    <input className="button is-link" type="submit" value="Enviar"></input>
-                </div>
             </div>
-        )
+        )}
     }
 }
 
