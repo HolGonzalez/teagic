@@ -25,19 +25,17 @@ class Quiz extends Component {
     Left(e){
         this.ValidateOption(e)
         this.setState({
-            left: this.state.left + parseInt(e.target.value),
+            left: this.state.left + 1,
             question : this.state.question + 1
         })
-        this.BrainResults()
     }
 
     Right(e){
         this.ValidateOption(e)
         this.setState({
-            right: this.state.right + parseInt(e.target.value),
+            right: this.state.right + 1,
             question : this.state.question + 1
         })
-        this.BrainResults()
     }
 
     ValidateOption(e){
@@ -47,30 +45,26 @@ class Quiz extends Component {
         }
     }
 
-    BrainResults(){
-        if(this.state.left > this.state.right){
-            this.setState({
-                results: "Tu hemisferio izquiero es el dominante.",
-                direction: "/left"
-            })
-        }else{
-            this.setState({
-                results: "Tu hemisferio derecho es el dominante.",
-                direction: "/right"
-            })
-        }
-    }
-
     render() {
         //console.log("Left: " + this.state.left, "Right: " + this.state.right, "Question: " + this.state.question)
+        var results, direction
+        if(this.state.left > this.state.right){
+            console.log("L: " + this.state.left)
+            results = "Tu hemisferio izquierdo es el dominante."
+            direction = "/left"
+        }else{
+            console.log("R: " + this.state.right)
+            results = "Tu hemisferio derecho es el dominante."
+            direction = "/right"
+        }
         if(this.state.question === 5){
             return(
                 <div className="container-md p-2 col-10 col-lg-6 has-text-centered align-middle">
                     <div className="row row-cols-1 box">
                         <h2 className="title is-2">Resultados</h2>
-                        <p className="mb-2"><strong>{this.state.results}</strong></p>
+                        <p className="mb-2"><strong>{results}</strong></p>
                         <div className="row row-cols-1 mx-auto">
-                            <Link className="btn button is-link" to={this.state.direction}>Comenzar a estudiar</Link>
+                            <Link className="btn button is-link" to={direction}>Comenzar a estudiar</Link>
                         </div>
                     </div>
                 </div>
