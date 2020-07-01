@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bulma/css/bulma.css'
@@ -20,6 +20,10 @@ class Quiz extends Component {
 
         this.Left = this.Left.bind(this)
         this.Right = this.Right.bind(this)
+    }
+
+    componentDidUpdate(prevProps, prevState){
+        this.Hello()
     }
 
     Left(e){
@@ -45,6 +49,10 @@ class Quiz extends Component {
         }
     }
 
+    Hello(){
+        console.log("Hola")
+    }
+
     render() {
         //console.log("Left: " + this.state.left, "Right: " + this.state.right, "Question: " + this.state.question)
         var results, direction
@@ -59,15 +67,27 @@ class Quiz extends Component {
         }
         if(this.state.question === 5){
             return(
-                <div className="container-md p-2 col-10 col-lg-6 has-text-centered align-middle">
-                    <div className="row row-cols-1 box">
-                        <h2 className="title is-2">Resultados</h2>
-                        <p className="mb-2"><strong>{results}</strong></p>
-                        <div className="row row-cols-1 mx-auto">
-                            <Link className="btn button is-link" to={direction}>Comenzar a estudiar</Link>
+                <Fragment>
+                    <div className="container-md p-2 col-10 col-lg-6 has-text-centered align-middle">
+                        <div className="row row-cols-1 box">
+                            <p className="mb-2 title is-4"><strong>{results}</strong></p>
                         </div>
                     </div>
-                </div>
+                    <div className="container-md p-2 col-10 col-lg-6 has-text-centered align-middle">
+                        <div className="row m-3 justify-content-md-center">
+                            <div className="col box mb-3 mr-3 p-3 has-text-centered">
+                                <p className="mb-2"><strong>Hemisferio Izquierdo</strong></p>
+                                <img className="rounded img-fluid m-2" src={require('../img/Left.svg')} alt="Hemisferio derecho"></img>
+                                <Link className="btn button is-warning" to="/left">Comenzar a estudiar</Link>
+                            </div>
+                            <div className="col box mb-3 mr-3 p-3 has-text-centered">
+                                <p className="mb-2"><strong>Hemisferio Derecho</strong></p>
+                                <img className="rounded img-fluid m-2" src={require('../img/Right.svg')} alt="Hemisferio derecho"></img>
+                                <Link className="btn button is-info" to="/right">Comenzar a estudiar</Link>
+                            </div>
+                        </div>
+                    </div>
+                </Fragment>
 
             )
         } else{
