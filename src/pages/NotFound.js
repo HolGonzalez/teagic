@@ -1,12 +1,17 @@
 import React from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bulma/css/bulma.css'
+import '../css/404.css';
+
 
 const NotFound = () => (
-    <div className="container">
-        <div className="row row-cols-1">
-            <h1>Pagina no encontrada</h1>
-        </div>
+    <div id="main">
+    	<div class="fof">
+        	<h1>Pagina no encontrada</h1>
+            <figure className="image is-128x128 mx-auto">
+                <img src={require('../img/404.svg')} alt="Hemisferio derecho"></img>
+            </figure>
+    	</div>
     </div>
 )
 
