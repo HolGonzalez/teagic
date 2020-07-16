@@ -70,18 +70,18 @@ class Quiz extends Component {
                 <Fragment>
                     <div className="container-md p-2 col-10 col-lg-6 has-text-centered align-middle">
                         <div className="row row-cols-1 box">
-                            <p className="mb-2 title is-4"><strong>{results}</strong></p>
+                            <p className="mb-2 title is-3"><strong>{results}</strong></p>
                         </div>
                     </div>
                     <div className="container-md p-2 col-10 col-lg-6 has-text-centered align-middle">
                         <div className="row m-3 justify-content-md-center">
                             <div className="col box mb-3 mr-3 p-3 has-text-centered">
-                                <p className="mb-2"><strong>Hemisferio Izquierdo</strong></p>
+                                <p className="title is-4 mb-2"><strong>Hemisferio Izquierdo</strong></p>
                                 <img className="rounded img-fluid m-2" src={require('../img/Left.svg')} alt="Hemisferio derecho"></img>
                                 <Link className="btn button is-warning" to="/left">Comenzar a estudiar</Link>
                             </div>
                             <div className="col box mb-3 mr-3 p-3 has-text-centered">
-                                <p className="mb-2"><strong>Hemisferio Derecho</strong></p>
+                                <p className="title is-4 mb-2"><strong>Hemisferio Derecho</strong></p>
                                 <img className="rounded img-fluid m-2" src={require('../img/Right.svg')} alt="Hemisferio derecho"></img>
                                 <Link className="btn button is-info" to="/right">Comenzar a estudiar</Link>
                             </div>
