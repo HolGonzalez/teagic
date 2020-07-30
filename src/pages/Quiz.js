@@ -22,10 +22,6 @@ class Quiz extends Component {
         this.Right = this.Right.bind(this)
     }
 
-    componentDidUpdate(prevProps, prevState){
-        this.Hello()
-    }
-
     Left(e){
         this.ValidateOption(e)
         this.setState({
@@ -52,17 +48,14 @@ class Quiz extends Component {
     render() {
         
         var vResults, vDirection
-        //Se puede borrar
+
         if(this.state.left > this.state.right){
-            console.log("L: " + this.state.left)
             vResults = "Tu hemisferio izquierdo es el dominante."
             vDirection = "/left"
         }else{
-            console.log("R: " + this.state.right)
             vResults = "Tu hemisferio derecho es el dominante."
             vDirection = "/right"
         }
-        //Fin
         
         if(this.state.question === 5){
             return(
@@ -77,12 +70,12 @@ class Quiz extends Component {
                             <div className="col box mb-3 mr-3 p-3 has-text-centered">
                                 <p className="title is-4 mb-2"><strong>Hemisferio Izquierdo</strong></p>
                                 <img className="rounded img-fluid m-2" src={require('../img/Left.svg')} alt="Hemisferio derecho"></img>
-                                <Link className="btn button is-warning" to="/left">Comenzar a estudiar</Link>
+                                <Link className="btn button is-warning" to={vDirection}>Comenzar a estudiar</Link>
                             </div>
                             <div className="col box mb-3 mr-3 p-3 has-text-centered">
                                 <p className="title is-4 mb-2"><strong>Hemisferio Derecho</strong></p>
                                 <img className="rounded img-fluid m-2" src={require('../img/Right.svg')} alt="Hemisferio derecho"></img>
-                                <Link className="btn button is-info" to="/right">Comenzar a estudiar</Link>
+                                <Link className="btn button is-info" to={vDirection}>Comenzar a estudiar</Link>
                             </div>
                         </div>
                     </div>
