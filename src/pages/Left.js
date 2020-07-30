@@ -2,6 +2,30 @@ import React, {Component, Fragment} from 'react';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bulma/css/bulma.css'
+import TableBinDec from '../components/TableBinDec'
+import Cart from '../components/Card'
+
+class Welcome extends React.Component {
+    render() {
+
+        const title = this.props.title
+
+      return (
+        <Fragment>
+            <div className="">
+                <div className="row row-cols-1 box">
+                    <p className="text-left title is-size-3">{title}</p>
+                    <p>En el sistema binario, las cifras que componen el número multiplican a las potencias de dos (1, 2, 4, 8, 16, ….)
+                        <br></br>
+                        20=1, 21=2, 22=4, 23=8, 24=16, 25=32, 26=64, ...
+                        <br></br>
+                        Por ejemplo, para pasar a binario un número decimal, empezamos por la derecha y vamos multiplicando cada cifra por las sucesivas potencias de 2, avanzando hacia la izquierda:</p>
+                </div>
+            </div>
+        </Fragment>
+      );
+    }
+  }
 
 class Left extends Component {
     constructor(props) {
@@ -10,125 +34,27 @@ class Left extends Component {
         this.state = {
             value : 0
         }
-        this.OperationNum = this.OperationNum.bind(this)
-    }
-
-    OperationNum(e){
-        var valueTemp = e.target.value
-        var num = parseInt(e.target.id, 10)
-        if(valueTemp == 1){
-            this.setState({
-                value : this.state.value + num
-            })
-        }
-        else if(valueTemp == 0){
-            this.setState({
-                value : this.state.value - num
-            })
-        }
     }
     
     render(){
         return (
-          <Fragment>
-            <div className="container-md p-2 col-10 col-lg-6 has-text-centered align-middle">
-                <div className="row row-cols-1 box">
-                <h1 className="title is-2">8-BIT BINARIO A DECIMAL</h1>
-            <table className="table has-text-centered">
-              <thead>
-                <tr>
-                    <th className="is-size-5"><var>2<sup>7</sup></var></th>
-                    <th className="is-size-5"><var>2<sup>6</sup></var></th>
-                    <th className="is-size-5"><var>2<sup>5</sup></var></th>
-                    <th className="is-size-5"><var>2<sup>4</sup></var></th>
-                    <th className="is-size-5"><var>2<sup>3</sup></var></th>
-                    <th className="is-size-5"><var>2<sup>2</sup></var></th>
-                    <th className="is-size-5"><var>2<sup>1</sup></var></th>
-                    <th className="is-size-5"><var>2<sup>0</sup></var></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                    <td>
-                        <div className="select">
-                            <select id="128"
-                                onChange={this.OperationNum}>
-                                <option value="0">0</option>
-                                <option value="1">1</option>
-                            </select>
-                        </div>
-                    </td>
-                    <td>
-                        <div className="select">
-                            <select id="64"
-                                onChange={this.OperationNum}>
-                                <option value="0">0</option>
-                                <option value="1">1</option>
-                            </select>
-                        </div>
-                    </td>
-                    <td>
-                        <div className="select">
-                            <select id="32"
-                                onChange={this.OperationNum}>
-                                <option value="0">0</option>
-                                <option value="1">1</option>
-                            </select>
-                        </div>
-                    </td>
-                  <td>
-                  <div className="select">
-                            <select id="16"
-                                onChange={this.OperationNum}>
-                                <option value="0">0</option>
-                                <option value="1">1</option>
-                            </select>
-                        </div>
-                  </td>
-                  <td>
-                  <div className="select">
-                            <select id="8"
-                                onChange={this.OperationNum}>
-                                <option value="0">0</option>
-                                <option value="1">1</option>
-                            </select>
-                        </div>
-                  </td>
-                  <td>
-                  <div className="select">
-                            <select id="4" 
-                                onChange={this.OperationNum}>
-                                <option value="0">0</option>
-                                <option value="1">1</option>
-                            </select>
-                        </div>
-                  </td>
-                  <td>
-                  <div className="select">
-                            <select id="2" 
-                                onChange={this.OperationNum}>
-                                <option value="0">0</option>
-                                <option value="1">1</option>
-                            </select>
-                        </div>
-                  </td>
-                  <td>
-                  <div className="select">
-                            <select id="1" 
-                                onChange={this.OperationNum}>
-                                <option value="0">0</option>
-                                <option value="1">1</option>
-                            </select>
-                        </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <p className="subtitle is-4">{`El resultado en base decimal es: ${this.state.value}`}</p>
+          <div className="container mt-4">
+            <div className="row justify-content-center">
+              <div className="col-8">
+                <Welcome title="Titulo o encabezado"></Welcome>
+              </div>
+              <div className="col-2">
+                <Cart
+                image={require('../img/binary-code.svg')}
+                ></Cart>
+              </div>
+            </div>
+            <div className="row justify-content-center">
+                <div className="col-11 col-md-10 col-lg-8">
+                    <TableBinDec></TableBinDec>
                 </div>
             </div>
-            
-          </Fragment>
+          </div>
         );
     }
 

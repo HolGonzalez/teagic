@@ -49,28 +49,27 @@ class Quiz extends Component {
         }
     }
 
-    Hello(){
-        console.log("Hola")
-    }
-
     render() {
-        //console.log("Left: " + this.state.left, "Right: " + this.state.right, "Question: " + this.state.question)
-        var results, direction
+        
+        var vResults, vDirection
+        //Se puede borrar
         if(this.state.left > this.state.right){
             console.log("L: " + this.state.left)
-            results = "Tu hemisferio izquierdo es el dominante."
-            direction = "/left"
+            vResults = "Tu hemisferio izquierdo es el dominante."
+            vDirection = "/left"
         }else{
             console.log("R: " + this.state.right)
-            results = "Tu hemisferio derecho es el dominante."
-            direction = "/right"
+            vResults = "Tu hemisferio derecho es el dominante."
+            vDirection = "/right"
         }
+        //Fin
+        
         if(this.state.question === 5){
             return(
                 <Fragment>
                     <div className="container-md p-2 col-10 col-lg-6 has-text-centered align-middle">
                         <div className="row row-cols-1 box">
-                            <p className="mb-2 title is-3"><strong>{results}</strong></p>
+                            <p className="mb-2 title is-3"><strong>{vResults}</strong></p>
                         </div>
                     </div>
                     <div className="container-md p-2 col-10 col-lg-6 has-text-centered align-middle">
