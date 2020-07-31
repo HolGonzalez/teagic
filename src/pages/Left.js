@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bulma/css/bulma.css'
 import TableBinDec from '../components/TableBinDec'
 import Card from '../components/Card'
-import Iframe from 'react-iframe'
+import ReactPlayer from 'react-player'
 
 class Binary extends React.Component {
     render() {
@@ -55,12 +55,13 @@ class Left extends Component {
                 <TableBinDec/>
               </div>
               <div className="col-6">
-                <div className="embed-responsive embed-responsive-16by9 box">
-                  <Iframe
-                    url="https://youtu.be/fGu0tM5u4b4"
-                    className="embed-responsive-item"
+                <div className="embed-responsive embed-responsive-16by9 box p-0">
+                  <ReactPlayer
+                  className="embed-responsive-item"
+                  url='https://www.youtube.com/watch?v=9boMnm5X9ak'
+                  controls
+                  onError={()=>console.log('Error')}
                   />
-                
                 </div>
               </div>
               <div className="col-12 m-4 has-text-centered">
