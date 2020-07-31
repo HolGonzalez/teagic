@@ -3,25 +3,30 @@ import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bulma/css/bulma.css'
 import TableBinDec from '../components/TableBinDec'
-import Cart from '../components/Card'
+import Card from '../components/Card'
+import Iframe from 'react-iframe'
 
-class Welcome extends React.Component {
+class Binary extends React.Component {
     render() {
 
         const title = this.props.title
 
       return (
         <Fragment>
-            <div className="">
-                <div className="row row-cols-1 box">
-                    <p className="text-left title is-size-3">{title}</p>
-                    <p>En el sistema binario, las cifras que componen el número multiplican a las potencias de dos (1, 2, 4, 8, 16, ….)
-                        <br></br>
-                        20=1, 21=2, 22=4, 23=8, 24=16, 25=32, 26=64, ...
-                        <br></br>
-                        Por ejemplo, para pasar a binario un número decimal, empezamos por la derecha y vamos multiplicando cada cifra por las sucesivas potencias de 2, avanzando hacia la izquierda:</p>
-                </div>
+          <div className="container box">
+            <div className="row">
+              <div className="col-10">
+                <p className="text-left title is-size-3">{title}</p>
+                <p>
+                En el sistema binario sólo hay dos cifras: 0 y 1. Como sucede en el sistema decimal, en este sistema binario también se utilizan exponentes para expresar cantidades mayores.
+                Mientras que en el sistema decimal la base es 10, en el sistema binario la base es 2. Como se mencionó anteriormente, la representación exponencial se utiliza para convertir una cantidad de un sistema numérico cualquiera al sistema decimal.
+                </p>
+              </div>
+              <div className="col-2">
+                <img src={require('../img/binary-code.svg')}></img>
+              </div>
             </div>
+          </div>
         </Fragment>
       );
     }
@@ -38,21 +43,29 @@ class Left extends Component {
     
     render(){
         return (
-          <div className="container mt-4">
+          <div className="container">
             <div className="row justify-content-center">
-              <div className="col-8">
-                <Welcome title="Titulo o encabezado"></Welcome>
+              <div className="col-12">
+                <h1 className="title is-1 mb-3">Hemisferio Izquierdo</h1>
               </div>
-              <div className="col-2">
-                <Cart
-                image={require('../img/binary-code.svg')}
-                ></Cart>
+              <div className="col-lg-12">
+                <Binary title="Sistema Binario"/>
               </div>
-            </div>
-            <div className="row justify-content-center">
-                <div className="col-11 col-md-10 col-lg-8">
-                    <TableBinDec></TableBinDec>
+              <div className="col-11 col-md-10 col-lg-8">
+                <TableBinDec/>
+              </div>
+              <div className="col-6">
+                <div className="embed-responsive embed-responsive-16by9 box">
+                  <Iframe
+                    url="https://youtu.be/fGu0tM5u4b4"
+                    className="embed-responsive-item"
+                  />
+                
                 </div>
+              </div>
+              <div className="col-12 m-4 has-text-centered">
+                <Link className="btn button is-info" to="/right">Cambiar de hemisferio</Link>
+              </div>
             </div>
           </div>
         );

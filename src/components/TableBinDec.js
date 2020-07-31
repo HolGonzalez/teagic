@@ -15,12 +15,12 @@ class TableBinDec extends Component {
     OperationNum(e){
         var valueTemp = e.target.value
         var num = parseInt(e.target.id, 10)
-        if(valueTemp === 1){
+        if(valueTemp == 1){
             this.setState({
                 value : this.state.value + num
             })
         }
-        else if(valueTemp === 0){
+        else if(valueTemp == 0){
             this.setState({
                 value : this.state.value - num
             })
@@ -125,8 +125,7 @@ class TableBinDec extends Component {
             </table>
             <p className="subtitle is-4">{`El resultado en base decimal es: ${this.state.value}`}</p>
                 </div>
-            </div>
-            
+            </div>  
           </Fragment>
         );
     }
