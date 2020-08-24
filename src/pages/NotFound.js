@@ -1,6 +1,4 @@
 import React from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bulma/css/bulma.css'
 import '../css/404.css';
 
 

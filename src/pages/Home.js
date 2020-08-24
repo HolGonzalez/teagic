@@ -1,7 +1,5 @@
 import React, { Fragment } from 'react'
 import {Link} from 'react-router-dom'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bulma/css/bulma.css'
 
 var home = {
     "title" : "Software neurodidáctico lógica matemática",

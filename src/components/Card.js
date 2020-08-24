@@ -1,6 +1,4 @@
 import React from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bulma/css/bulma.css'
 
 
 const Card = ({title, content, image}) => (

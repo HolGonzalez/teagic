@@ -1,6 +1,4 @@
 import React, {Component, Fragment} from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bulma/css/bulma.css'
 
 class TableBinDec extends Component {
     constructor(props) {

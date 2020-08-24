@@ -1,7 +1,5 @@
 import React, {Component, Fragment} from 'react';
 import { Link } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bulma/css/bulma.css'
 import Question from '../components/Question'
 
 
