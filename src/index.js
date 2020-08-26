@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './components/App'
-serviceWorkerimport * as serviceWorker from './serviceWorker'
+import * as serviceWorker from './serviceWorker'
 
 const root = document.getElementById('root')
 
