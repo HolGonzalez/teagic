@@ -58,22 +58,22 @@ class Quiz extends Component {
         if(this.state.question === 5){
             return(
                 <Fragment>
-                    <div className="container-md p-2 col-10 col-lg-6 has-text-centered align-middle">
+                    <div className="container-md p-2 col-10 col-lg-8 has-text-centered align-middle">
                         <div className="row row-cols-1 box">
                             <p className="mb-2 title is-3"><strong>{vResults}</strong></p>
                         </div>
                     </div>
-                    <div className="container-md p-2 col-10 col-lg-6 has-text-centered align-middle">
+                    <div className="container-md p-2 col-12 col-lg-8 has-text-centered align-middle">
                         <div className="row m-3 justify-content-md-center">
-                            <div className="col box mb-3 mr-3 p-3 has-text-centered">
+                            <div className="col-sm-8 col-md-8 col-lg-5 box mb-3 mr-3 p-3 has-text-centered">
                                 <p className="title is-4 mb-2"><strong>Hemisferio Izquierdo</strong></p>
                                 <img className="rounded img-fluid m-2" src={require('../img/Left.svg')} alt="Hemisferio derecho"></img>
-                                <Link className="btn button is-warning" to={vDirection}>Comenzar a estudiar</Link>
+                                <Link className="btn button is-warning align-middle" to={vDirection}>Comenzar a estudiar</Link>
                             </div>
-                            <div className="col box mb-3 mr-3 p-3 has-text-centered">
+                            <div className="col-sm-8 col-md-8 col-lg-5 box mb-3 mr-3 p-3 has-text-centered">
                                 <p className="title is-4 mb-2"><strong>Hemisferio Derecho</strong></p>
                                 <img className="rounded img-fluid m-2" src={require('../img/Right.svg')} alt="Hemisferio derecho"></img>
-                                <Link className="btn button is-info" to={vDirection}>Comenzar a estudiar</Link>
+                                <Link className="btn button is-info align-middle" to={vDirection}>Comenzar a estudiar</Link>
                             </div>
                         </div>
                     </div>
@@ -82,7 +82,7 @@ class Quiz extends Component {
             )
         } else{
         return (
-            <div className="container-md p-2 col-10 col-lg-6">
+            <div className="container-md p-2 col-10 col-lg-8">
                 <div className="row row-cols-1 box">
                     <h2 className="title is-2 has-text-centered">Test cerebro</h2>
                     <Question 
