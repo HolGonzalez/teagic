@@ -25,6 +25,9 @@ class Right extends Component {
             <Link className="btn button is-warning" to="/left">
               Cambiar de hemisferio
             </Link>
+            <Link className="btn button is-danger ml-2" to="/evaluation">
+              Prueba de conocimientos
+            </Link>
           </div>
         </div>
       </div>

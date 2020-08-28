@@ -5,7 +5,8 @@ import Brain from '../pages/Brain'
 import BrainTest from '../pages/BrainTest'
 import Left from '../pages/Left'
 import Right from '../pages/Right'
-import NotFound from '../pages/NotFound.js'
+import NotFound from '../pages/NotFound'
+import Evaluation from '../pages/Evaluation'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bulma/css/bulma.css'
 
@@ -19,6 +20,7 @@ function App() {
                 <Route exact path="/brain-test" component={BrainTest}/>
                 <Route exact path="/left" component={Left}/>
                 <Route exact path="/right" component={Right}/>
+                <Route exact path="/evaluation" component={Evaluation}/>
                 <Route component={NotFound}/>
             </Switch>
         </BrowserRouter>

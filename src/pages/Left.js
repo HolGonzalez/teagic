@@ -88,8 +88,11 @@ class Left extends Component {
             <VideoPlayer videoUrl="https://youtu.be/CUr74ebGWT8" />
           </div>
           <div className="col-12 m-4 has-text-centered">
-            <Link className="btn button is-info" to="/right">
+            <Link className="btn button is-info mr-2" to="/right">
               Cambiar de hemisferio
+            </Link>
+            <Link className="btn button is-danger ml-2" to="/evaluation">
+              Prueba de conocimientos
             </Link>
           </div>
         </div>
