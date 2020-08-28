@@ -2,7 +2,7 @@ import React from 'react'
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import Home from '../pages/Home'
 import Brain from '../pages/Brain'
-import Quiz from '../pages/Quiz'
+import BrainTest from '../pages/BrainTest'
 import Left from '../pages/Left'
 import Right from '../pages/Right'
 import NotFound from '../pages/NotFound.js'
@@ -16,7 +16,7 @@ function App() {
             <Switch>
                 <Route exact path="/" component={Home}/>
                 <Route exact path="/brain" component={Brain}/>
-                <Route exact path="/start-quiz" component={Quiz}/>
+                <Route exact path="/brain-test" component={BrainTest}/>
                 <Route exact path="/left" component={Left}/>
                 <Route exact path="/right" component={Right}/>
                 <Route component={NotFound}/>

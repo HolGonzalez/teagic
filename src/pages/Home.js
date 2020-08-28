@@ -16,7 +16,7 @@ const Home = () => (
             </div>
             <div className="mt-4 has-text-centered">
                 <Link className="mr-5 btn button is-info " to="/brain">{home.buttonLeft}</Link>
-                <Link className="ml-5 btn button is-primary" to="start-quiz">{home.buttonRight}</Link>
+                <Link className="ml-5 btn button is-primary" to="brain-test">{home.buttonRight}</Link>
             </div>
         </div>
         

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Question from '../components/Question'
 
 
-class Quiz extends Component {
+class BrainTest extends Component {
 
     constructor(props) {
         super(props)
@@ -137,4 +137,4 @@ class Quiz extends Component {
     }
 }
 
-export default Quiz
+export default BrainTest
