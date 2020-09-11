@@ -1,11 +1,12 @@
 {
   "short_name": "Software neurodidáctico",
-  "name": "Software neurodidáctico lógica matemática",
+  "name": "Software neurodidáctico",
   "icons": [
     {
       "src": "/images/favicon.png",
-      "sizes": "256x256",
-      "type": "image/png"
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
   "start_url": ".",
