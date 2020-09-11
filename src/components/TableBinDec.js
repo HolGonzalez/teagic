@@ -28,10 +28,10 @@ class TableBinDec extends Component {
     render(){
         return (
           <Fragment>
-            <div className="container-md p-2 has-text-centered align-middle">
+            <div className="container-md p-2 has-text-centered align-middle overflow-auto">
                 <div className="row row-cols-1 box">
-                <h1 className="title is-3">8-BIT BINARIO A DECIMAL</h1>
-            <table className="table has-text-centered">
+                <h1 className="title is-3">BINARIO A DECIMAL</h1>
+            <table className="table has-text-centered col-12">
               <thead>
                 <tr>
                     <th className="is-size-5"><var>2<sup>7</sup></var></th>

@@ -4,7 +4,7 @@ const QuestionBox = ({question, options, selected}) => {
   const [answer, setAnswer] = useState(options);
   return (
     <div className="box rounded">
-      <div className="h3">{question}</div>
+      <p>{question}</p>
       {answer.map((text, index) => (
         <button
           key={index}

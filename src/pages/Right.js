@@ -14,7 +14,7 @@ class Right extends Component {
   render() {
     return (
       <div className="container">
-        <div className="row justify-content-center">
+        <div className="row justify-content-center p-4">
           <div className="col-12">
             <h1 className="title is-1 mt-3 mb-3 has-text-centered">Hemisferio Derecho</h1>
           </div>
@@ -22,10 +22,10 @@ class Right extends Component {
             <DecToBin />
           </div>
           <div className="col-12 m-4 has-text-centered">
-            <Link className="btn button is-warning" to="/left">
+            <Link className="btn button is-warning m-2" to="/left">
               Cambiar de hemisferio
             </Link>
-            <Link className="btn button is-danger ml-2" to="/evaluation">
+            <Link className="btn button is-danger m-2" to="/evaluation">
               Prueba de conocimientos
             </Link>
           </div>

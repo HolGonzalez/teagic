@@ -1,31 +1,32 @@
 import React, { Component, Fragment } from "react";
 import { Link } from "react-router-dom";
 import TableBinDec from "../components/TableBinDec";
-import Card from "../components/Card";
 import ReactPlayer from "react-player";
 
-class Binary extends React.Component {
+class Theme extends React.Component {
   render() {
     const title = this.props.title;
+    const content = this.props.content;
+    const left = this.props.left;
+    const right = this.props.right;
+    const image = this.props.image;
+    const quote = this.props.quote;
 
     return (
       <Fragment>
         <div className="container box">
-          <div className="row">
-            <div className="col-10">
+          <div className="row justify-content-between">
+            <div className={left}>
               <p className="text-left title is-size-3">{title}</p>
-              <p>
-                En el sistema binario sólo hay dos cifras: 0 y 1. Como sucede en
-                el sistema decimal, en este sistema binario también se utilizan
-                exponentes para expresar cantidades mayores. Mientras que en el
-                sistema decimal la base es 10, en el sistema binario la base es
-                2. Como se mencionó anteriormente, la representación exponencial
-                se utiliza para convertir una cantidad de un sistema numérico
-                cualquiera al sistema decimal.
+              <p>{content}</p>
+              <p className="text-muted">
+                <em>
+                  <small>{quote}</small>
+                </em>
               </p>
             </div>
-            <div className="col-2">
-              <img src={require("../img/binary-code.svg")}></img>
+            <div className={right}>
+              <img className="mt-2" src={image}></img>
             </div>
           </div>
         </div>
@@ -74,24 +75,50 @@ class Left extends Component {
       <div className="container">
         <div className="row justify-content-center p-4">
           <div className="col-12">
-            <h1 className="title is-1 mt-3 mb-3 has-text-centered ">
+            <h1 className="title is-1 mt-3 mb-3 has-text-centered">
               Hemisferio Izquierdo
             </h1>
           </div>
-          <div className="col-lg-12">
-            <Binary title="Sistema Binario" />
+          <div className="col-lg-12 m-2">
+            <Theme
+              title="Partes de la division"
+              left="col-sm-12 col-lg-8"
+              content="La división es un cálculo matemático que implica repartir en partes iguales el total de un todo numérico. La división consiste en averiguar la cantidad de veces que un número llamado «divisor», está contenido en otro número llamado «dividendo». El resultado de esta operación llamada división recibe la denominación de «cociente».  El dividendo 125 dividido por el divisor 5 arroja un cociente o resultado igual a 25."
+              quote="Texto tomado de: partesde"
+              right="col-sm-12 col-lg-4"
+              image="https://media0.giphy.com/media/ka0VR1JNoQdIn3PlyC/giphy.gif"
+            ></Theme>
           </div>
-          <div className="col-sm-11 col-md-10 col-lg-8">
+          <div className="col-lg-12 m-2">
+            <Theme
+              title="Sistema Binario"
+              left="col-sm-12 col-lg-10"
+              content="El sistema binario es un sistema de numeración en el que los números se representan utilizando las cifras 0 y 1, es decir solo 2 dígitos (bi = dos). Esto en informática y en electrónica tiene mucha importancia ya que las computadoras trabajan internamente con 2 niveles: hay o no hay de Tensión, hay o no hay corriente, pulsado o sin pulsar, etc."
+              quote="Texto tomado de: areatecnologia"
+              right="col-sm-12 col-lg-2"
+              image={require("../img/binary-code.svg")}
+            />
+          </div>
+          <div className="col-sm-12 col-lg m-2">
+            <div className="container box">
+              <div className="row justify-content-center">
+                <div className="col-sm-12">
+                  <img src="https://media0.giphy.com/media/MZdsdMZXEFKgWHqchI/giphy.gif"></img>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-sm-11 col-md-10 col-lg-8 m-2">
+            <VideoPlayer videoUrl="https://youtu.be/CXKjWbTf9CQ" />
+          </div>
+          <div className="col-sm-12 col-md-10 col-lg-9 m-2">
             <TableBinDec />
           </div>
-          <div className="col-sm-11 col-md-10 col-lg-8">
-            <VideoPlayer videoUrl="https://youtu.be/CUr74ebGWT8" />
-          </div>
-          <div className="col-12 m-4 has-text-centered">
-            <Link className="btn button is-info mr-2" to="/right">
+          <div className="col-12 m-4 has-text-centered m-2">
+            <Link className="btn button is-info m-2" to="/right">
               Cambiar de hemisferio
             </Link>
-            <Link className="btn button is-danger ml-2" to="/evaluation">
+            <Link className="btn button is-danger m-2" to="/evaluation">
               Prueba de conocimientos
             </Link>
           </div>
