@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { Link } from "react-router-dom";
 import TableBinDec from "../components/TableBinDec";
+import DecToBin from "../components/DecToBin";
 import ReactPlayer from "react-player";
 
 class Theme extends React.Component {
@@ -99,6 +100,17 @@ class Left extends Component {
               image={require("../img/binary-code.svg")}
             />
           </div>
+          <div className="col-lg-12 m-2">
+            <Theme
+              title="Sistema Decimal"
+              left="col-sm-12 col-lg-10"
+              content="El sistema decimal es un sistema de numeración: una serie de símbolos que, respetando distintas reglas, se emplean para la construcción de los números que son considerados válidos. En este caso, el sistema toma como base al diez.
+              Esto quiere decir que el sistema decimal se encarga de la representación de las cantidades empleando diez cifras o dígitos diferentes: 0 (cero), 1 (uno), 2 (dos), 3 (tres), 4 (cuatro), 5 (cinco), 6 (seis), 7 (siete), 8 (ocho) y 9 (nueve)."
+              quote="Texto tomado de: definicion.de"
+              right="col-sm-12 col-lg-2"
+              image={require("../img/numbers.svg")}
+            />
+          </div>
           <div className="col-sm-12 col-lg m-2">
             <div className="container box">
               <div className="row justify-content-center">
@@ -109,7 +121,23 @@ class Left extends Component {
             </div>
           </div>
           <div className="col-sm-11 col-md-10 col-lg-8 m-2">
-            <VideoPlayer videoUrl="https://youtu.be/CXKjWbTf9CQ" />
+            <VideoPlayer className="mb-0" videoUrl="https://youtu.be/CXKjWbTf9CQ" />
+            <p className="text-muted mt-0">
+              <em>
+                <a href="https://www.youtube.com/c/math2me" target="_blank"><small>Video recopilado del canal de math2me</small></a>
+              </em>
+            </p>
+          </div>
+          <div className="col-sm-12 col-md-10 col-lg-9 m-2">
+            <DecToBin />
+          </div>
+          <div className="col-sm-11 col-md-11 col-lg-11 m-2">
+            <VideoPlayer className="mb-0" videoUrl="https://youtu.be/CUr74ebGWT8" />
+            <p className="text-muted mt-0">
+              <em>
+              <a href="https://www.youtube.com/c/math2me" target="_blank"><small>Video recopilado del canal de math2me</small></a>
+              </em>
+            </p>
           </div>
           <div className="col-sm-12 col-md-10 col-lg-9 m-2">
             <TableBinDec />
