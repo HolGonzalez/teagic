@@ -34,6 +34,68 @@ class Theme extends React.Component {
   }
 }
 
+class DecimalBinary extends React.Component {
+  render() {
+    return (
+      <Fragment>
+        <div className="container box">
+          <div className="row justify-content-between">
+            <div className="col-12">
+            <p className="text-left title is-size-3">Conversion Decimal a Binario</p>
+            <p>
+              Supongamos que queremos convertir el número decimal 9191 a
+              binario, el procedimiento es el siguiente:
+            </p>
+            <ol className="list-group mt-4">
+              <li className="list-group-item">
+                Tomamos el número <strong>91</strong> y lo dividimos entre <strong>2</strong>, esto nos da un
+                cociente (el resultado de la división) y un residuo (cuanto
+                sobro al dividir el número), como estamos dividiendo entre <strong>2</strong> el
+                residuo solo puede tener dos valores: <span className="text-warning font-weight-bold">0</span> o <span className="text-warning font-weight-bold">1</span>; el residuo nos
+                indica si para esta posición hay un <span className="text-warning font-weight-bold">0</span> o un <span className="text-warning font-weight-bold">1</span> en el número
+                binario correspondiente, en este caso el residuo es <span className="text-warning font-weight-bold">1</span>, ya que <strong>91</strong>÷<strong>2</strong> es <strong>45</strong> y nos sobra 1.
+              </li>
+              <li className="list-group-item">
+              Una vez que calculamos esta división, repetimos el proceso con el cociente de la división anterior, es decir, <strong>45</strong>; y volvemos a calcular la división entre <strong>2</strong>, obteniendo: <strong>22</strong> como resultado y <span className="text-warning font-weight-bold">1</span> como residuo, lo que nos dice cual es el valor en la segunda posición del número binario.
+              </li>
+              <li className="list-group-item">
+              Y así, repetimos una y otra vez hasta que el resultado sea <strong>0</strong>.
+              </li>
+              <li className="list-group-item">
+              Entonces los siguientes pasos son <strong>22</strong>÷<strong>2</strong>, que nos da <strong>11</strong> como resultado y <span className="text-warning font-weight-bold">0</span> como residuo.
+              </li>
+              <li className="list-group-item">
+              Luego <strong>11</strong>÷<strong>2</strong>, que nos da <strong>5</strong> como resultado y <span className="text-warning font-weight-bold">1</span> como residuo.
+              </li>
+              <li className="list-group-item">
+              Despues <strong>5</strong>÷<strong>2</strong>, que nos da <strong>2</strong> como resultado y <span className="text-warning font-weight-bold">1</span> como residuo.
+              </li>
+              <li className="list-group-item">
+              Luego <strong>1</strong>÷<strong>2</strong>, que nos da <strong>1</strong> como resultado y <span className="text-warning font-weight-bold">0</span> como residuo.
+              </li>
+              <li className="list-group-item">
+              Y por ultimo dividimos <strong>1</strong> entre <strong>2</strong> y obtenemos <strong>0</strong> como resultado y <span className="text-warning font-weight-bold">1</span> como residuo.
+              </li>
+            </ol>
+            <p className="mt-4">
+            Si observamos los residuos que obtuvimos, tenemos el número binario: <span className="text-warning font-weight-bold">1011011</span>, que es equivalente al número decimal <strong>91</strong>. Quizá el procedimiento te parezca algo complicado, pero con la ayuda de la siguiente imagen debería ser más claro.
+            </p>
+            <div className="has-text-centered col-sm-12 col-lg-12 ">
+              <img className="mt-4" src={require("../img/decimalBinario.svg")}></img>
+            </div>
+            <p className="text-muted mt-0">
+              <em>
+              <a href="https://arquimedes.matem.unam.mx/mati/actividades/actividad_decimal_a_binario/index.html" target="_blank"><small>Información recopilada de: arquimedes.matem.unam.mx</small></a>
+              </em>
+            </p>
+            </div>
+          </div>
+        </div>
+      </Fragment>
+    );
+  }
+}
+
 class Right extends Component {
   constructor(props) {
     super(props);
@@ -48,7 +110,9 @@ class Right extends Component {
       <div className="container">
         <div className="row justify-content-center p-4">
           <div className="col-12">
-            <h1 className="title is-1 mt-3 mb-3 has-text-centered">Hemisferio Derecho</h1>
+            <h1 className="title is-1 mt-3 mb-3 has-text-centered">
+              Hemisferio Derecho
+            </h1>
           </div>
           <div className="col-lg-12 m-2">
             <Theme
@@ -80,6 +144,9 @@ class Right extends Component {
               right="col-sm-12 col-lg-2"
               image={require("../img/numbers.svg")}
             />
+          </div>
+          <div className="col-lg-12 m-2">
+            <DecimalBinary />
           </div>
           <div className="col-11 col-md-10 col-lg-8">
             <DecToBin />
