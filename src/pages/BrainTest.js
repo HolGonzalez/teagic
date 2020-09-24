@@ -68,12 +68,12 @@ class BrainTest extends Component {
                             <div className="col-sm-8 col-md-8 col-lg-5 box mb-3 mr-3 p-3 has-text-centered">
                                 <p className="title is-4 mb-2"><strong>Hemisferio Izquierdo</strong></p>
                                 <img className="rounded img-fluid m-2" src={require('../img/Left.svg')} alt="Hemisferio derecho"></img>
-                                <Link className="btn button is-warning align-middle" to={vDirection}>Comenzar a estudiar</Link>
+                                <Link className="btn button is-warning align-middle" to="/left">Comenzar a estudiar</Link>
                             </div>
                             <div className="col-sm-8 col-md-8 col-lg-5 box mb-3 mr-3 p-3 has-text-centered">
                                 <p className="title is-4 mb-2"><strong>Hemisferio Derecho</strong></p>
                                 <img className="rounded img-fluid m-2" src={require('../img/Right.svg')} alt="Hemisferio derecho"></img>
-                                <Link className="btn button is-info align-middle" to={vDirection}>Comenzar a estudiar</Link>
+                                <Link className="btn button is-info align-middle" to="/right">Comenzar a estudiar</Link>
                             </div>
                         </div>
                     </div>
