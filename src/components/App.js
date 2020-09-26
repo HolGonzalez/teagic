@@ -1,28 +1,47 @@
-import React from 'react'
-import {BrowserRouter, Route, Switch} from 'react-router-dom'
-import Home from '../pages/Home'
-import Brain from '../pages/Brain'
-import BrainTest from '../pages/BrainTest'
-import Left from '../pages/Left'
-import Right from '../pages/Right'
-import NotFound from '../pages/NotFound'
-import Evaluation from '../pages/Evaluation'
+import React, { Component, lazy, Suspense } from 'react';
+import {BrowserRouter, Route, Router, Switch} from 'react-router-dom'
+
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bulma/css/bulma.css'
+import '../css/styles.css';
+import '../css/404.css';
 
+const Home = lazy(() => import('../pages/Home'))
+const Brain = lazy(() => import('../pages/Brain'))
+const BrainTest = lazy(() => import('../pages/BrainTest'))
+const Left = lazy(() => import('../pages/Left'))
+const Right = lazy(() => import('../pages/Right'))
+const NotFound = lazy(() => import('../pages/NotFound'))
+const Evaluation = lazy(() => import('../pages/Evaluation'))
 
 function App() {
     return (
         <BrowserRouter>
-            <Switch>
-                <Route exact path="/" component={Home}/>
-                <Route exact path="/brain" component={Brain}/>
-                <Route exact path="/brain-test" component={BrainTest}/>
-                <Route exact path="/left" component={Left}/>
-                <Route exact path="/right" component={Right}/>
-                <Route exact path="/evaluation" component={Evaluation}/>
-                <Route component={NotFound}/>
-            </Switch>
+            <Suspense fallback={<div>...</div>}>
+                <Switch>
+                    <Route exact path="/">
+                        <Home/>
+                    </Route>
+                    <Route exact path="/brain">
+                        <Brain/>
+                    </Route>
+                    <Route exact path="/brain-test">
+                        <BrainTest/>
+                    </Route>
+                    <Route exact path="/left">
+                        <Left/>
+                    </Route>
+                    <Route exact path="/right">
+                        <Right/>
+                    </Route>
+                    <Route exact path="/evaluation">
+                        <Evaluation/>
+                    </Route>
+                    <Route>
+                        <NotFound/>
+                    </Route>
+                </Switch>
+            </Suspense>
         </BrowserRouter>
     )
 }

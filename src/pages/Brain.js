@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import Card from '../components/Card'
 
 var contents = {
@@ -30,6 +31,11 @@ const Brain = () => (
                 image={require('../img/cuadrante-emocional.svg')}
                 content={contents.emocional}
             ></Card>
+            <div className="col-12 m-4 has-text-centered">
+          <Link className="btn button is-info m-2 btn-fixed" to="/">
+          <i class="fa fa-home" aria-hidden="true"></i>
+          </Link>
+        </div>
         </div>
     </div>
 )

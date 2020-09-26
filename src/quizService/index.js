@@ -34,6 +34,13 @@ const qBank = [
     correct: "11",
     questionId: "5"
   },
+  {
+    question:
+      "La división es un cálculo matemático que implica repartir en partes desiguales el total de un todo numérico.",
+    answers: ["Falso", "Verdadero"],
+    correct: "Falso",
+    questionId: "6"
+  },
 ];
 
 export default (n = 5) =>

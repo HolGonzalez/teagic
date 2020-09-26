@@ -83,7 +83,7 @@ class BrainTest extends Component {
         } else{
         return (
             <div className="container-md p-2 col-10 col-lg-8">
-                <div className="row row-cols-1 box">
+                <div className="row row-cols-1 box has-text-centered">
                     <h2 className="title is-2 has-text-centered">Test cerebro</h2>
                     <Question 
                         title="¿Tiendo a estar más frecuentemente?" 
